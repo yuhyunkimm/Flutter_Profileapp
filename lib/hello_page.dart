@@ -28,7 +28,7 @@ class _HelloPageState extends State<HelloPage> {
             NewWidget(num: num),
             ElevatedButton(
               onPressed: () {
-                setState(() {
+                setState(() { // stateful 상태에서만 사용이 가능하다
                   // 변경하고 싶은 상태 값을 여기서 rebuild 해준다
                   num++;
                 });

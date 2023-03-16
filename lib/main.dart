@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: theme(),
       debugShowCheckedModeBanner: false,
-      home: HelloPage(),
+      home: ProfilePage(),
     );
   }
 }
@@ -42,7 +42,7 @@ class ProfilePage extends StatelessWidget {
           ProfileCountInfo(),
           SizedBox(height: 20),
           ProfileButtons(),
-          Expanded(child: ProfileTab()),
+          Expanded(child: ProfileTab()), // Expanded 공간을 무수히 쓸수 있어서 Expanded로 잡아줘야한다
         ],
       ),
     );
