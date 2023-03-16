@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_profile/hello_page.dart';
 
 import 'package:flutter_profile/theme.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: theme(),
       debugShowCheckedModeBanner: false,
-      home: ProfilePage(),
+      home: HelloPage(),
     );
   }
 }
