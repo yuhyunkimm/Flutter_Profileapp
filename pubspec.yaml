@@ -30,7 +30,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dependencies:
   cached_network_image: ^3.2.3
 
 

@@ -56,15 +56,20 @@ class _ProfileTabState extends State<ProfileTab>
           ),
           itemCount: 42, // 게시물 갯수
           itemBuilder: (context, index) {
-            return Image.network(
-                // 사진첩(viewholder)
-                // 사진을 다운 받을 때 15개 정도 받아줘서(new) 재활용을 해준다
-                // 밑으로 내려갈지 몰라서 단점은 사라진다(cashing이되지않는다)
-                // 사진 내용만 바꿔치기 한다 -> 메모리 관리가 효과적이다
-                // 재활용 = recycleview
-
-                "https://picsum.photos/id/${index + 1}/200/200");
-            // itemCount가 index에 들어온다
+          //   return Image.network(
+          //       // 사진첩(viewholder)
+          //       // 사진을 다운 받을 때 15개 정도 받아줘서(new) 재활용을 해준다
+          //       // 밑으로 내려갈지 몰라서 단점은 사라진다(cashing이되지않는다)
+          //       // 사진 내용만 바꿔치기 한다 -> 메모리 관리가 효과적이다
+          //       // 재활용 = recycleview
+          //
+          //       "https://picsum.photos/id/${index + 1}/200/200");
+          //   // itemCount가 index에 들어온다
+            return CachedNetworkImage(
+              imageUrl: "https://picsum.photos/id/${index + 1}/200/200",
+              placeholder: (context, url) => CircularProgressIndicator(),
+              errorWidget: (context, url, error) => Icon(Icons.error),
+            );
           },
         ),
         Container(color: Colors.blue),
